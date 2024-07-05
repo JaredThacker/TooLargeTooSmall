@@ -8,7 +8,7 @@ public class Main {
     public static void playGame(){
         int usersGuess;
         int guessCount;
-        int computersNum = (int)(100 * (Math.random()) + 1);
+        int computersNum = (int)(20 * (Math.random()) + 1);
 
         guessCount = 0;
         System.out.println("What is your first guess ");
@@ -22,7 +22,7 @@ public class Main {
             }
             if(guessCount==5){
                 System.out.println("You lose");
-                continue;
+                break;
             }
                 if(usersGuess<computersNum){
                     System.out.println("Your guess is too low");
@@ -33,7 +33,7 @@ public class Main {
     }
 
     public static void main(String[] args){
-        System.out.println("Pick a number between 1 and 100\n");
+        System.out.println("Pick a number between 1 and 20\n");
         Scanner scan = new Scanner(System.in);
         String playAgain = "y";
         do {
