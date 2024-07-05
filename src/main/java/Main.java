@@ -3,6 +3,7 @@
  */
 
 import java.util.Scanner;
+import java.util.HashSet;
 public class Main {
 
     public static void playGame(){
@@ -11,13 +12,14 @@ public class Main {
         int computersNum = (int)(20 * (Math.random()) + 1);
 
         guessCount = 0;
+
         System.out.println("What is your first guess ");
         Scanner scanner = new Scanner(System.in);
         while(true){
             usersGuess = scanner.nextInt();
             guessCount++;
             if(usersGuess == computersNum){
-                System.out.println("You win!");
+                System.out.println("You win");
                 break;
             }
             if(guessCount==5){
@@ -41,7 +43,5 @@ public class Main {
             System.out.println("Would you like to play again? y/n");
             playAgain = scan.nextLine().toLowerCase();
         } while (playAgain.equals("y"));
-
-
     }
 }
