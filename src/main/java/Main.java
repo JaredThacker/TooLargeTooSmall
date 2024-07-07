@@ -3,18 +3,23 @@
  */
 
 import java.util.Scanner;
-import java.util.HashSet;
 public class Main {
 
     public static void playGame(){
         int usersGuess;
         int guessCount;
-        int computersNum = (int)(20 * (Math.random()) + 1);
+
+        System.out.println("Pick a number between 1 and ");
+        Scanner scanner = new Scanner(System.in);
+
+        int max = scanner.nextInt();
+
+        int computersNum = (int)(max * (Math.random()) + 1);
 
         guessCount = 0;
 
         System.out.println("What is your first guess ");
-        Scanner scanner = new Scanner(System.in);
+
         while(true){
             usersGuess = scanner.nextInt();
             guessCount++;
@@ -22,20 +27,20 @@ public class Main {
                 System.out.println("You win");
                 break;
             }
-            if(guessCount==5){
+            if(guessCount == 5){
                 System.out.println("You lose");
                 break;
             }
-                if(usersGuess<computersNum){
+                if(usersGuess < computersNum){
                     System.out.println("Your guess is too low");
-                }else if(usersGuess>computersNum){
+
+                }else if(usersGuess > computersNum){
                     System.out.println("Your guess is too high");
                 }
         }
     }
 
     public static void main(String[] args){
-        System.out.println("Pick a number between 1 and 20\n");
         Scanner scan = new Scanner(System.in);
         String playAgain = "y";
         do {
